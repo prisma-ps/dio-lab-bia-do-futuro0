@@ -1,103 +1,68 @@
-# 🎓 Edu - Educador Financeiro Inteligente
+# 🤖 Mentor de Carteira - Agente Financeiro Inteligente
 
-> Agente de IA Generativa que ensina conceitos de finanças pessoais de forma simples e personalizada, usando os próprios dados do cliente como exemplos práticos.
+Projeto desenvolvido para o Lab **"Construa Seu Assistente Virtual Com Inteligência Artificial"** da [DIO](https://dio.me).
 
-## 💡 O Que é o Edu?
+O **Mentor de Carteira** é um assistente financeiro consultivo, analítico e transparente, projetado para orientar investidores iniciantes na alocação de seu patrimônio, com foco em priorização de reserva de emergência, educação por classes de ativos e gestão proporcional de risco.
 
-O Edu é um educador financeiro que **ensina**, não recomenda. Ele explica conceitos como reserva de emergência, tipos de investimentos e análise de gastos usando uma abordagem didática e exemplos concretos baseados no perfil do cliente.
+---
 
-**O que o Edu faz:**
-- ✅ Explica conceitos financeiros de forma simples
-- ✅ Usa dados do cliente como exemplos práticos
-- ✅ Responde dúvidas sobre produtos financeiros
-- ✅ Analisa padrões de gastos de forma educativa
+## 📌 Estrutura do Projeto
 
-**O que o Edu NÃO faz:**
-- ❌ Não recomenda investimentos específicos
-- ❌ Não acessa dados bancários sensíveis
-- ❌ Não substitui um profissional certificado
+O repositório segue estritamente o padrão solicitado pela DIO:
 
-## 🏗️ Arquitetura
-
-```mermaid
-flowchart TD
-    A[Usuário] --> B[Streamlit]
-    B --> C[Ollama - LLM Local]
-    C --> D[Base de Conhecimento]
-    D --> C
-    C --> E[Resposta Educativa]
-```
-
-**Stack:**
-- Interface: Streamlit
-- LLM: Ollama (modelo local `gpt-oss`)
-- Dados: JSON/CSV mockados
-
-## 📁 Estrutura do Projeto
-
-```
-├── data/                          # Base de conhecimento
-│   ├── perfil_investidor.json     # Perfil do cliente
-│   ├── transacoes.csv             # Histórico financeiro
-│   ├── historico_atendimento.csv  # Interações anteriores
-│   └── produtos_financeiros.json  # Produtos para ensino
+```text
+lab-agente-financeiro/
 │
-├── docs/                          # Documentação completa
-│   ├── 01-documentacao-agente.md  # Caso de uso e persona
-│   ├── 02-base-conhecimento.md    # Estratégia de dados
-│   ├── 03-prompts.md              # System prompt e exemplos
-│   ├── 04-metricas.md             # Avaliação de qualidade
-│   └── 05-pitch.md                # Apresentação do projeto
+├── README.md                          # Visão geral do projeto
+├── requirements.txt                   # Dependências Python
 │
-└── src/
-    └── app.py                     # Aplicação Streamlit
+├── data/                              # Base de conhecimento local
+│   ├── perfil_investidor.json         # Perfil e situação financeira do cliente
+│   └── produtos_financeiros.json      # Catálogo de classes e produtos financeiros
+│
+├── docs/                              # Documentação completa dos 6 passos
+│   ├── 01-documentacao-agente.md      # Caso de uso, persona e arquitetura
+│   ├── 02-base-conhecimento.md        # Dados e estratégia de injeção de contexto
+│   ├── 03-prompts.md                  # Engenharia de prompts e edge cases
+│   ├── 04-metricas.md                 # Avaliação, testes estruturados e resultados
+│   └── 05-pitch.md                    # Roteiro cronometrado do pitch de 3 minutos
+│
+└── src/                               # Aplicação funcional
+    └── app.py                         # Chatbot interativo com Streamlit e Gemini
 ```
 
-## 🚀 Como Executar
+---
 
-### 1. Instalar Ollama
+## 🛡️ Diferenciais e Regras de Segurança
 
+- **Zero Recomendação Específica:** O agente nunca indica ações ou tickers pontuais (cumprindo requisitos éticos de suitability).
+- **Educação por Classes:** Indica áreas de investimento (Renda Fixa pós-fixada, Fundos Imobiliários, ETFs) explicando seus instrumentos e riscos associados.
+- **Prioridade de Reserva:** 100% dos aportes são direcionados à liquidez até a conclusão da meta da reserva de emergência.
+- **Gestão Proporcional (Regra dos 15%):** Caso o cliente insista em Renda Variável, a exposição é limitada com segurança a no máximo 10%-15% do aporte.
+
+---
+
+## 🚀 Como Executar a Aplicação
+
+### 1. Clonar ou Acessar a Pasta do Projeto
 ```bash
-# Baixar em: ollama.com
-ollama pull gpt-oss
-ollama serve
+cd lab-agente-financeiro
 ```
 
-### 2. Instalar Dependências
-
+### 2. Instalar as Dependências
 ```bash
-pip install streamlit pandas requests
+pip install -r requirements.txt
 ```
 
-### 3. Rodar o Edu
+### 3. Configurar a Chave de API
+Você pode obter uma chave gratuita no [Google AI Studio](https://aistudio.google.com/). Configure-a no ambiente ou insira diretamente na barra lateral da aplicação:
+```bash
+export GEMINI_API_KEY="sua_chave_aqui"
+```
 
+### 4. Executar o Streamlit
 ```bash
 streamlit run src/app.py
 ```
 
-## 🎯 Exemplo de Uso
-
-**Pergunta:** "O que é CDI?"  
-**Edu:** "CDI é uma taxa de referência usada pelos bancos. Quando um investimento rende '100% do CDI', significa que ele acompanha essa taxa. Hoje o CDI está próximo da Selic. Quer que eu explique a diferença entre os dois?"
-
-**Pergunta:** "Onde estou gastando mais?"  
-**Edu:** "Olhando suas transações de outubro, sua maior despesa é moradia (R$ 1.380), seguida de alimentação (R$ 570). Juntas, representam quase 80% dos seus gastos. Isso é bem comum! Quer que eu explique algumas estratégias de organização?"
-
-## 📊 Métricas de Avaliação
-
-| Métrica | Objetivo |
-|---------|----------|
-| **Assertividade** | O agente responde o que foi perguntado? |
-| **Segurança** | Evita inventar informações (anti-alucinação)? |
-| **Coerência** | A resposta é adequada ao perfil do cliente? |
-
-## 🎬 Diferenciais
-
-- **Personalização:** Usa os dados do próprio cliente nos exemplos
-- **100% Local:** Roda com Ollama, sem enviar dados para APIs externas
-- **Educativo:** Foco em ensinar, não em vender produtos
-- **Seguro:** Estratégias de anti-alucinação documentadas
-
-## 📝 Documentação Completa
-
-Toda a documentação técnica, estratégias de prompt e casos de teste estão disponíveis na pasta [`docs/`](./docs/).
+A interface abrirá automaticamente no seu navegador padrão (`http://localhost:8501`).
