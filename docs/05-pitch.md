@@ -1,50 +1,33 @@
-# Pitch (3 minutos)
-
-> [!TIP]
-> Você pode usar alguns slides pra apoiar no seu Pitch e mostrar sua solução na prática.
+# Roteiro do Pitch (3 Minutos)
 
 ## Estrutura do Pitch
 
-| Tempo | Seção | O que falar |
-|-------|-------|-------------|
-| 0:00 - 0:30 | Problema | A dor que você resolve |
-| 0:30 - 1:30 | Solução | Como o Edu resolve |
-| 1:30 - 2:30 | Demo | Mostre funcionando |
-| 2:30 - 3:00 | Diferencial | Por que é inovador |
+### 1. O Problema (45 segundos)
+"Você já tentou começar a investir e se sentiu completamente paralisado pelo excesso de siglas como CDB, LCI, IPCA e Selic? Ou pior: já sentiu a tentação de seguir uma 'dica quente' de ação na internet e acabou perdendo dinheiro?
 
----
- 
-## Roteiro do Edu
-
-### 🎯 Problema (30 seg)
-> "62% dos brasileiros não sabem o que é reserva de emergência. Muita gente quer aprender sobre finanças, mas não sabe por onde começar — e tem medo de parecer burro perguntando."
-
-### 💡 Solução (60 seg)
-> "O Edu é um educador financeiro que ensina de forma personalizada. Ele usa seus próprios dados para dar exemplos práticos. Não recomenda investimentos — só educa. É como ter um professor particular de finanças disponível 24h."
-
-### 📱 Demo (60 seg)
-> [Compartilhe a tela e faça 2-3 perguntas ao Edu]
-> - "O que é CDI?"
-> - "Onde estou gastando mais?"
-> - "Me explica o que é Tesouro Selic"
-
-### ✨ Diferencial (30 seg)
-> "Diferente de chatbots genéricos, o Edu usa SEUS dados como exemplo. Isso torna o aprendizado concreto. E o melhor: roda 100% local, sem custo e sem enviar seus dados pra ninguém."
+Mais de 70% dos brasileiros que tentam entrar no mercado financeiro desistem nos primeiros meses por dois motivos: falta de conhecimento sobre gestão de risco e ausência de uma reserva de emergência antes de arriscar. No mercado atual, os chatbots bancários tradicionais são reativos e frios, enquanto as redes sociais estão cheias de promessas perigosas de rentabilidade milagrosa."
 
 ---
 
-## Checklist do Pitch
+### 2. A Solução: Mentor de Carteira (45 segundos)
+"Para resolver essa dor, desenvolvemos o **Mentor de Carteira**, um assistente de inteligência artificial generativa projetado para atuar como um mentor consultivo, analítico e 100% transparente.
 
-- [ ] Duração máxima de 3 minutos
-- [ ] Problema claramente definido
-- [ ] Solução demonstrada na prática
-- [ ] Diferencial explicado
-- [ ] Áudio e vídeo com boa qualidade
+O Mentor de Carteira analisa a situação cadastral do cliente — sua renda, patrimônio e tolerância ao risco — e, diante de qualquer valor de aporte, calcula a alocação patrimonial mais segura. Ele não tenta adivinhar o futuro: ele educa o investidor sobre classes de ativos e impõe a segurança da reserva de emergência antes de liberar qualquer exposição ao risco."
 
 ---
 
-## Link do Vídeo
+### 3. Demonstração na Prática (1 minuto)
+*(Aqui você mostra a tela do Streamlit funcionando ou reproduz os casos de teste):*
 
-> Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
+- **Cenário 1:** O cliente João chega com R$ 500 para investir. O agente identifica imediatamente que faltam R$ 20.000 para completar sua reserva de 6 meses e orienta 100% do aporte para Renda Fixa pós-fixada com liquidez diária, explicando os instrumentos e os riscos de inflação.
+- **Cenário 2:** O cliente tenta obter uma dica de ação para 'lucro rápido'. O agente recusa com firmeza e elegância, cumprindo as normas de suitability.
+- **Cenário 3:** O cliente insiste em Renda Variável. Em vez de bloquear o diálogo, o agente ensina a regra da proporção segura: mantém R$ 425 na segurança e destina apenas R$ 75 para o cliente aprender na prática através de ETFs diversificados.
 
-[Link do vídeo]
+---
+
+### 4. Diferencial e Impacto (30 segundos)
+"O grande diferencial do **Mentor de Carteira** é a sua arquitetura de segurança anti-alucinação:
+- 100% de conformidade com diretrizes éticas (nunca recomenda ativos pontuais ou faz promessas irreais).
+- Foco em gestão matemática de risco e educação financeira real.
+
+Com o Mentor de Carteira, transformamos a ansiedade do investidor iniciante em autonomia e tranquilidade para o futuro financeiro. Muito obrigado!"
